@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Demo from '@/components/Demo01'
+import Search from '@/components/search'
 
 import VuexTest from '@/view/VuexTest'
 import Recommend from '@/view/recommend'
@@ -32,6 +32,11 @@ export default new Router({
             path: '/singer',
             name: 'singer',
             component: Recommend
+        },
+        {
+            path: '/search',
+            name: 'search',
+            component: Search
         },
 
     ]

@@ -20,7 +20,7 @@
             <!--slot-->
             <div v-for="item in recommendList" :key="item.key">
               <a :href="item.linkUrl">
-                <img @load="loadImage" class="needsclick" :src="item.picUrl"></img>
+                <img @load="loadImage" class="needsclick" :src="item.picUrl"/>
               </a>
             </div>
           </slider>

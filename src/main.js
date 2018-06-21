@@ -9,7 +9,7 @@ import VueLazyload from 'vue-lazyload'
 
 import 'element-ui/lib/theme-chalk/index.css'
 import './style/style.css'
-/* import './common/stylus/index.styl' */
+import './common/stylus/index.styl'
 
 import store from './store'
 
