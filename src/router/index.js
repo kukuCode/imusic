@@ -1,10 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Demo from '@/components/Demo01'
-import Search from '@/components/search'
 
 import VuexTest from '@/view/VuexTest'
 import Recommend from '@/view/recommend'
+import Search from '@/view/search'
+import SingerDetail from '@/view/singer/details'
 
 Vue.use(Router)
 
@@ -36,7 +37,11 @@ export default new Router({
         {
             path: '/search',
             name: 'search',
-            component: Search
+            component: Search,
+            children: [{
+                path: '/search/:id',
+                component: SingerDetail
+            }]
         },
 
     ]

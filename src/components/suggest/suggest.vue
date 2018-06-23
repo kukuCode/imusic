@@ -30,7 +30,9 @@
 import Scroll from '@/base/scroll'
 import NoResult from '@/base/noResult/noResult'
 import Loading from '@/base/loading'
+import Singer from '@/common/js/singer'
 
+import { mapMutations, mapActions } from 'vuex'
 import { createSong } from '@/common/js/song'
 import { ERR_OK } from '@/api/config'
 import { search } from '@/api/search'
@@ -68,6 +70,12 @@ export default {
     }
   },
   methods: {
+    ...mapMutations({
+      setSinger: 'SET_SINGER'
+    }),
+    ...mapActions([
+      'insertSong'
+    ]),
     listScroll() {
         this.$emit('listScroll')
     },
@@ -138,6 +146,22 @@ export default {
           this._checkHasMore(res.data)
         }
       })
+    },
+    // 点击选择列表的歌曲名
+    selectItem(item){
+      // 如果是歌手,展示歌手详情
+      if(item.type === TYPE_SINGER){
+        const  singer = new Singer({
+          id: item.singermid,
+          name: item.singername
+        })
+        this.$router.push({
+          path: `/search/${singer.id}`
+        })
+        this.setSinger(singer)
+      } else {
+debugger
+      }
     }
   },
   beforeCreated() {
