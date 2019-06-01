@@ -5,17 +5,21 @@
     <keep-alive>
       <router-view/>
     </keep-alive>
+    <!-- 播放器 -->
+    <player></player>
   </div>
 </template>
 
 <script>
 import iHeader from '@/components/header/Header'
 import tab from '@/components/tab'
+import Player from '@/components/player/player'
 export default {
   name: 'App',
   components: {
     iHeader,
-    tab
+    tab,
+    Player
   }
 }
 </script>

@@ -42,6 +42,7 @@ import { playListMixin } from "@/common/js/mixin";
 const RESERVED_HEIGHT = 40;
 const transform = prefixStyle("transform");
 export default {
+  mixins:[playListMixin],
   name: "musicList",
   props: {
     bgImage: {

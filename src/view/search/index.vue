@@ -70,9 +70,6 @@ export default {
       }).catch((err) => {
         
       });
-    },
-    addQuery(){
-
     }
   },
   beforeCreated() {

@@ -160,8 +160,9 @@ export default {
         })
         this.setSinger(singer)
       } else {
-debugger
+        this.insertSong(item)
       }
+       this.$emit('select')
     }
   },
   beforeCreated() {
